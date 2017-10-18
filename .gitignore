@@ -1,0 +1,7 @@
+.idea/WorldAppJavaPractice.iml
+.idea/modules.xml
+.idea/compiler.xml
+.idea/
+.idea/workspace.xml
+target/generated-sources
+target/classes
