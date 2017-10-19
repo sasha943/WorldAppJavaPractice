@@ -1,5 +1,8 @@
 //9) Задать два массива случайными числами от 25 до 75. Определить у какого из массивов больше парных елементов.
 
+// not finished
+
+/*
 import java.util.Arrays;
 
 public class PairValues {
@@ -18,9 +21,7 @@ public class PairValues {
         System.out.println("Array1: " + Arrays.toString(array1));
         System.out.println("Array2: " + Arrays.toString(array2));
 
-        System.out.print("Sum array: ");
-        for (int i=0; i<array1.length; i++){            //calculation of sums of arrays' values
-            System.out.print(array1[i] + array2[i] + " ");
-        }
+
     }
 }
+*/
