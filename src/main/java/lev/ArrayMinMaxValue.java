@@ -1,3 +1,5 @@
+//1) Найти минимальное и максимальное значения в массиве и вывести их на консоль
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -7,7 +9,7 @@ public class ArrayMinMaxValue{
         System.out.print("Input array length: ");
         int n = input.nextInt(); //Array length
         int[] array1 = new int[n];
-        for (int i=0; i<n; i++){
+        for (int i = 0; i < n; i++){
             array1[i] = (int)(Math.random() * 100);
         }
         System.out.println("Input array is \n" + Arrays.toString(array1));
