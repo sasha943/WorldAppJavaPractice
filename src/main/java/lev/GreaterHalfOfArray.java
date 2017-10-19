@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class GreaterHalfOfArray {
     public static void main(String[] args) {
 
-        int arrayLength = 1;    // if arrayLength is odd, length of second half of array will be 1 greater
+        int arrayLength = 10;    // if arrayLength is odd, length of second half of array will be 1 greater
         int maxValue = 100;
 
         int[] array1 = new int[arrayLength];            //creating random array
