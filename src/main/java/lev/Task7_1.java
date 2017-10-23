@@ -1,4 +1,4 @@
-package main.java.lev;
+// 2.1 Инвертировать массив (без использования допольнительного массива)
 
 import java.util.Arrays;
 
