@@ -1,12 +1,10 @@
 // 2.2 Проверить или является число простым
 
-import java.util.Arrays;
-
 public class Task7_2 {
     public static void main(String[] args) {
 
-        int minValue = 0;
-        int maxValue = 100;
+        int minValue = 1;
+        int maxValue = 31;
         int number = minValue + (int)(Math.random() * maxValue);
 
         System.out.println("Given number: " + number);
@@ -16,7 +14,7 @@ public class Task7_2 {
     }
 
     public static boolean isPrime(int number){
-        for (int i=2; i<number-1; i++){
+        for (int i=2; i<number/2; i++){
             if (number % i == 0) return false;
         }
         return true;
