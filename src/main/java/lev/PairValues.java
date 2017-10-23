@@ -1,8 +1,5 @@
 //9) Задать два массива случайными числами от 25 до 75. Определить у какого из массивов больше парных елементов.
 
-// not finished
-
-
 import java.util.Arrays;
 
 public class PairValues {
