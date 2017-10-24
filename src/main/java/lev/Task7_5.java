@@ -7,14 +7,14 @@ public class Task7_5 {
         char char2replace = '@';
 
         System.out.println(str);
-        System.out.println(replaceA(str, char2find, char2replace));
+        System.out.println(replaceChar(str, char2find, char2replace));
 
     }
-    public static String replaceA (String str, char a, char b){
+    public static String replaceChar (String str, char char2find, char char2replace){
         int index = 0;
-        while (str.indexOf(a, index) >= 0){
-            index = str.indexOf(a, index);
-            str = str.substring(0, index) + b + str.substring(index+1);
+        while (str.indexOf(char2find, index) >= 0){
+            index = str.indexOf(char2find, index);
+            str = str.substring(0, index) + char2replace + str.substring(index+1);
         }
         return str;
     }
