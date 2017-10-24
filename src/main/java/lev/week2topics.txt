@@ -1,0 +1,12 @@
+primitive vs reference
+arrays
+strings
+loop
+variable scope
+String vs char array
+type convertion
+Math.random
+method: strucutre, calling
+arrays and loops
+codingbat
+simple tests
