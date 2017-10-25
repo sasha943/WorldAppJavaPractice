@@ -10,15 +10,15 @@ public class Task7_4 {
         int maxValue = 100;
         int shift = 1;
 
-        int[] arr = new int[arrayLength];
-        arr = arrayRandomValues(arr, minValue, maxValue);
+        int[] arr =  GenerateArrayRandomValues(arrayLength, minValue, maxValue);
         System.out.println("Given array: " + Arrays.toString(arr));
 
         System.out.println("Shifted on " + shift + " positions: " + Arrays.toString(shiftArray(arr, shift)));
     }
 
-    public static int[] arrayRandomValues(int[] array, int minValue, int maxValue){
-        for (int i = 0; i < array.length; i++){
+    public static int[] GenerateArrayRandomValues(int arrayLength, int minValue, int maxValue){
+        int[] array = new int[arrayLength];
+        for (int i = 0; i < arrayLength; i++){
             array[i] = minValue + (int)(Math.random() * maxValue);
         }
         return array;
