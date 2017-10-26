@@ -1,5 +1,7 @@
 // 3.2. Создать логическую матрицу по следующим критериям, если і равно j, то элементом будет true.
 
+import static main.java.lev.Matrixx.printMatrix;
+
 public class Week3_task32 {
     public static void main(String[] args) {
 
@@ -16,13 +18,4 @@ public class Week3_task32 {
         return matrix;
     }
 
-    public static void printMatrix(boolean[][] matrix){
-        for (int i = 0; i < matrix.length; i++){
-            for (int j = 0; j < matrix[i].length; j++){
-                if (j > 0) System.out.print(" ");
-                System.out.print(matrix[i][j]);
-            }
-            System.out.println();
-        }
-    }
 }
