@@ -1,5 +1,5 @@
 /* 3.5. а) Поменять наибольшую строку массива с наименьшей в двухмерном массиве. (Размер - сумма элементов в строке)
-        b) Поменять наибольший и наименьший столбик в двухмерном массиве.
+        b) Поменять столбики с наибольшим и наименьшим количеством символов в двухмерном массиве.
 */
 
 import static main.java.lev.Matrixx.generateStringMarix;
@@ -8,10 +8,10 @@ import static main.java.lev.Matrixx.printMatrix;
 public class Week3_task35 {
     public static void main(String[] args) {
 
-        int rows = 5;
-        int columns = 5;
+        int rows = 4;
+        int columns = 6;
         int minLength = 1;
-        int maxLength = 16;
+        int maxLength = 12;
         String[][] matrix = new String[rows][columns];
 
         matrix = generateStringMarix(rows, columns,minLength,maxLength);
@@ -19,8 +19,13 @@ public class Week3_task35 {
         printMatrix(matrix);
 
         System.out.println();
-        System.out.println("MIN and MAX strings exchanged:");
+        System.out.println("MIN and MAX strings had swapped:");
         printMatrix(minMaxExchange(matrix));
+
+        System.out.println();
+        System.out.println("MAX and MIN columns had swapped:");
+        printMatrix(minMaxColumnsExchange(matrix));
+
     }
 
     public static String[][] minMaxExchange(String[][] matrix){
@@ -29,7 +34,7 @@ public class Week3_task35 {
         String minString = matrix[0][0];        // value of shortest string
         String maxString = matrix[0][0];        // value of longest string
         for (int i = 0; i < matrix.length; i++){
-            for (int j = 0; j < matrix.length; j++){
+            for (int j = 0; j < matrix[i].length; j++){
                 if (matrix[i][j].length() > maxString.length()){
                     maxString = matrix[i][j];
                     maxIndex[0] = i;
@@ -44,6 +49,37 @@ public class Week3_task35 {
         }
         matrix[maxIndex[0]][maxIndex[1]] = minString;
         matrix[minIndex[0]][minIndex[1]] = maxString;
+        return matrix;
+    }
+
+    public static String[][] minMaxColumnsExchange(String[][] matrix){
+        int maxColumnIndex = 0;
+        int minColumnIndex = 0;
+        int sumOfLength;
+        int maxColumnSum = 0;
+        int minColumnSum = 0;
+
+        for (int j = 0; j < matrix[0].length; j++){
+            sumOfLength = 0;
+            for (int i = 0; i < matrix.length; i++){
+                sumOfLength += matrix[i][j].length();
+            }
+            if (maxColumnSum < sumOfLength){
+                maxColumnSum = sumOfLength;
+                maxColumnIndex = j;
+            }
+            if (minColumnSum > sumOfLength || minColumnIndex == 0){
+                minColumnSum = sumOfLength;
+                minColumnIndex = j;
+            }
+        }
+
+        String[] tmpColumn = new String[matrix[0].length];
+        for (int i = 0; i < matrix.length; i++){
+            tmpColumn[i] = matrix[i][maxColumnIndex];
+            matrix[i][maxColumnIndex] = matrix[i][minColumnIndex];
+            matrix[i][minColumnIndex] = tmpColumn[i];
+        }
         return matrix;
     }
 }
