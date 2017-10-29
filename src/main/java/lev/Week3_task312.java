@@ -13,15 +13,48 @@ import java.util.regex.Pattern;
 
 public class Week3_task312 {
     public static void main(String[] args) {
-//        System.out.print("Enter password: ");
-//        Scanner scan = new Scanner(System.in);
-//        String password = scan.next();
 
-        String password = "R07098098a";
+        String password;
 
-        System.out.println(isValidPassword(password));
+        System.out.print("Enter password: ");
+        Scanner scan = new Scanner(System.in);
+        password = scan.next();
+
+        if (isValidPassword(password)){
+            System.out.println("Password accepted");
+            System.exit(0);
+        }
+        
+        System.out.print("Bad password. Try once more: ");
+        scan = new Scanner(System.in);
+        password = scan.next();
+
+        if (isValidPassword(password)) {
+            System.out.println("Password accepted");
+            System.exit(0);
+        }
+
+        do {
+            password = generatePassword(8, 20);
+        }
+        while (!isValidPassword(password));
+
+        System.out.println("Bad password. Generated random password: " + password);
 
     }
+
+    public static String generatePassword(int minLength, int maxLength){
+        String password = "";
+        char randomChar;
+        int strLength = minLength + (int)(Math.random() * (maxLength - minLength));
+
+        for (int k = 0; k < strLength; k++){
+            randomChar = (char) (33 + (int)(Math.random() * 93));       // generating random char of ascii table
+            password = password + randomChar;
+        }
+        return password;
+        }
+
 
     public static boolean isValidPassword(String password){
         int minLength = 8;
