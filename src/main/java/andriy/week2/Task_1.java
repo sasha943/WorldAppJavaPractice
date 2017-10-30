@@ -1,7 +1,6 @@
 // Найти минимальное и максимальное значения в массиве и вывести их на консоль
 package main.java.andriy.week2;
 import java.util.Scanner;
-import java.util.Random;
 import java.util.Arrays;
 
 public class Task_1 {
@@ -14,23 +13,21 @@ public class Task_1 {
         int[] array = new int[arrLength];
 
         for (int i = 0; i < arrLength; i++) {
-            Random randomGenerator = new Random();
-            array[i] = randomGenerator.nextInt(500);
-        }
-        System.out.println("Generated array " + Arrays.toString(array));
+
+            array[i] = (int)(Math.random()*100);
+            }
+            System.out.println("Generated array " + Arrays.toString(array));
 
         int maxValue = array[0];
         int minValue = array[0];
-        int indexMax;
-        int indexMin;
         int i = 1;
         while (i < arrLength) {
             if (maxValue < array[i]) {
                 maxValue = array[i];
-                            }
+            }
             if (minValue > array[i]) {
                 minValue = array[i];
-                            }
+            }
             i++;
         }
 

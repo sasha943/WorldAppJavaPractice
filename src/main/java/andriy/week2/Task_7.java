@@ -14,23 +14,23 @@ public class Task_7 {
         int halfArrayLength = arrLength / 2;
         int[] array = new int[arrLength];
 
+        int maxFirstHalfAverage = 0;
+        int maxSecondHalfAverage = 0;
+
         if (arrLength % 2 == 0) {
             for (int i = 0; i < arrLength; i++) {
-                Random randomGenerator = new Random();
-                array[i] = randomGenerator.nextInt(500);
+
+            array[i] = (int)(Math.random()*200);
+
+            if (i < halfArrayLength){
+                maxFirstHalfAverage = maxFirstHalfAverage + array[i];
+                }
+            else {
+                maxSecondHalfAverage = maxSecondHalfAverage + array[i];
+                }
             }
             System.out.println("Generated array " + Arrays.toString(array));
 
-            int maxFirstHalfAverage = 0;
-            int maxSecondHalfAverage = 0;
-
-            for (int i = 0; i < halfArrayLength; i++) {
-                maxFirstHalfAverage = maxFirstHalfAverage + array[i];
-            }
-
-            for (int i = halfArrayLength; i < arrLength; i++) {
-                maxSecondHalfAverage = maxSecondHalfAverage + array[i];
-            }
             System.out.println("First half average is " + maxFirstHalfAverage);
             System.out.println("Second half average is " + maxSecondHalfAverage);
 

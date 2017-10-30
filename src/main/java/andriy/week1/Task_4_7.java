@@ -1,3 +1,6 @@
+//4.7. Вводим два числа, если одно из них делиться на другое без остатка, то выводим тру и показываем результат деления (целую часть от деления  и остачу)
+				//в другом случае выводим false и показываем результат деления (целую часть от деления  и остачу)
+
 package main.java.andriy.week1;
 
 import java.util.Scanner;
@@ -9,16 +12,16 @@ public class Task_4_7 {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the first value");
-        int a = sc.nextInt();
+        int firstValue = sc.nextInt();
         System.out.println("Enter the second value");
-        int b = sc.nextInt();
-        int ost = a % b;
+        int secondValue = sc.nextInt();
+        int reminderOfDivision = firstValue % secondValue;
 
-        if ( ost == 0 ) {
-            System.out.println("True " + "Celoe =" + (a/b) + " ostacha =" + ost);
+        if ( reminderOfDivision == 0 ) {
+            System.out.println("True " + "Int part =" + (firstValue/secondValue) + " remainder of division =" + reminderOfDivision);
         }
         else {
-            System.out.println("False " + "Celoe =" + (a/b) + " ostacha =" + ost);
+            System.out.println("False " + "Int part =" + (firstValue/secondValue) + " remainder of division =" + reminderOfDivision);
         }
     }
 }

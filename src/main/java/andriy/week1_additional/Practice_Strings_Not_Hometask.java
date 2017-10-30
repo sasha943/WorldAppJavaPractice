@@ -10,7 +10,7 @@ public class Practice_Strings_Not_Hometask {
         System.out.println(helloString.length());  // string length
         System.out.println(s);
 
-        if (helloString.length() >= 5 && helloString.substring(0,5).equals("Hello")) {   // .equals for comparing strings
+        if (helloString.length() >= 5 && helloString.contains("Hello")) {   // .equals for comparing strings
             System.out.println("Hello present");                                         // string1.equalsIgnoreCase (string2) - comparing strings, A or a does not mean
         }
         else {

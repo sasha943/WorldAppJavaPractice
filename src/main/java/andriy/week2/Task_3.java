@@ -17,9 +17,9 @@ public class Task_3 {
         int[] arrayTwo = new int[arrLength];
 
         for (int i = 0; i < arrLength; i++) {
-            Random randomGenerator = new Random();
-            arrayOne[i] = randomGenerator.nextInt(500);
-            arrayTwo[i] = randomGenerator.nextInt(1000);
+
+            arrayOne[i] = (int)(Math.random()*100);
+            arrayTwo[i] = (int)(Math.random()*1000);
         }
         System.out.println("Generated array #1 " + Arrays.toString(arrayOne));
         System.out.println("Generated array #2 " + Arrays.toString(arrayTwo));

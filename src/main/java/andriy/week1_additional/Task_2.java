@@ -1,3 +1,7 @@
+//2) Ввести с клавиатуры три числа, положительные возвести в куб, а отрица-
+//тельные заменить на 0.
+
+
 package main.java.andriy.week1_additional;
 import java.util.Scanner;
 public class Task_2 {
@@ -13,8 +17,8 @@ public class Task_2 {
         int c = sc.nextInt();
 
         if (a > 0) {
-            a = a*a*a;
-            System.out.println("a = " + a);
+
+            System.out.println("a = " + Math.pow(a , 3));
                     }
         else {
             if (a < 0){
@@ -26,8 +30,8 @@ public class Task_2 {
         }
 
         if (b > 0) {
-            b = b*b*b;
-            System.out.println("b = " + b);
+
+            System.out.println("b = " + Math.pow(b , 3));
         }
         else {
             if (b < 0){
@@ -39,8 +43,8 @@ public class Task_2 {
         }
 
         if (c > 0) {
-            c = c*c*c;
-            System.out.println("c = " + c);
+
+            System.out.println("c = " + Math.pow(c , 3));
         }
         else {
             if (c < 0){

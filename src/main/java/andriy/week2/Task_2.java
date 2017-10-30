@@ -2,7 +2,6 @@
 package main.java.andriy.week2;
 
 import java.util.Scanner;
-import java.util.Random;
 import java.util.Arrays;
 
 public class Task_2 {
@@ -14,8 +13,8 @@ public class Task_2 {
         int[] array = new int[arrLength];
 
         for (int i = 0; i < arrLength; i++) {
-            Random randomGenerator = new Random();
-            array[i] = randomGenerator.nextInt(500);
+
+            array[i] = (int)(Math.random()*100);
         }
         System.out.println("Generated array " + Arrays.toString(array));
 
@@ -23,17 +22,20 @@ public class Task_2 {
         int minValue = array[0];
         int indexMax = 0;
         int indexMin = 0;
-        int i = 1;
-        while (i < arrLength) {
-            if (maxValue < array[i]) {
-                maxValue = array[i];
-                indexMax = i;
+
+        for (int i = 0; i < array.length; i++) {
+
+            {
+                if (maxValue < array[i]) {
+                    maxValue = array[i];
+                    indexMax = i;
+                }
+                if (minValue > array[i]) {
+                    minValue = array[i];
+                    indexMin = i;
+                }
+
             }
-            if (minValue > array[i]) {
-                minValue = array[i];
-                indexMin = i;
-            }
-            i++;
         }
 
         System.out.println("Max value of array is " + maxValue);

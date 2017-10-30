@@ -1,3 +1,5 @@
+//4.6. Вводим два числа, вывести их суму, если она в диапазоне от 11 до 19.
+
 package main.java.andriy.week1;
 
 import java.util.Scanner;
@@ -9,10 +11,10 @@ public class Task_4_6 {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the first value");
-        int a = sc.nextInt();
+        int firstValue = sc.nextInt();
         System.out.println("Enter the second value");
-        int b = sc.nextInt();
-        int sum = a + b;
+        int secondValue = sc.nextInt();
+        int sum = firstValue + secondValue;
 
         if (11 <= sum && sum <= 19) {
             System.out.println(sum);

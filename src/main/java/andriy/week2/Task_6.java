@@ -1,3 +1,5 @@
+//6) Найти среднее арифметическое массива
+
 package main.java.andriy.week2;
 import java.util.Scanner;
 import java.util.Random;
@@ -13,17 +15,17 @@ public class Task_6 {
         int[] array = new int[arrLength];
 
         for (int i = 0; i < arrLength; i++) {
-            Random randomGenerator = new Random();
-            array[i] = randomGenerator.nextInt(10);
+
+            array[i] = (int)(Math.random()*100);
         }
         System.out.println("Generated array " + Arrays.toString(array));
 
-        int massSum = 0;
+        int arrSum = 0;
 
         for (int i = 0; i < arrLength; i++) {
-            massSum = massSum + array[i];
+            arrSum = arrSum + array[i];
         }
-        double average = (double)(massSum/(arrLength));
+        double average = (double)(arrSum/(arrLength));
 
         System.out.println("Average value is " + average);
     }

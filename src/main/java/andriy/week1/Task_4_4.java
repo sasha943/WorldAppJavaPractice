@@ -1,3 +1,6 @@
+//4.4. Вводим число с плавающей точкой с консоли, и проверяем лежит ли оно в диапазоне от 0 до 1
+
+
 package main.java.andriy.week1;
 
 import java.util.Scanner;
@@ -9,9 +12,9 @@ public class Task_4_4 {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the value");
-        float a = sc.nextFloat();
+        float inputValue = sc.nextFloat();
 
-        if ( a >= 0 && a <= 1 ) {
+        if ( inputValue >= 0 && inputValue <= 1 ) {
             System.out.println("Value is in range [0....1]");
         }
         else {

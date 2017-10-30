@@ -1,3 +1,6 @@
+//1) Ввести с клавиатуры значения трех сторон треугольника a, b и c и опреде-
+//лить, является ли он прямоугольным. Ответ вывести в виде сообщения.
+
 package main.java.andriy.week1_additional;
 import java.util.Scanner;
 public class Task_1 {
@@ -5,14 +8,14 @@ public class Task_1 {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the first side of the triangle");
-        int a = sc.nextInt();
+        int sideA = sc.nextInt();
         System.out.println("Enter the first side of the triangle");
-        int b = sc.nextInt();
+        int sideB = sc.nextInt();
         System.out.println("Enter the first side of the triangle");
-        int c = sc.nextInt();
+        int sideC = sc.nextInt();
 
-        if (((a + b) > c) && ((b + c) > a) && ((c + a) > b)) {
-            if ((a == Math.sqrt(b * b + c * c)) || (b == Math.sqrt(a * a + c * c)) || (c == Math.sqrt(a * a + b * b))) {
+        if (((sideA + sideB) > sideC) && ((sideB + sideC) > sideA) && ((sideC + sideA) > sideB)) {
+            if ((sideA == Math.sqrt(sideB * sideB + sideC * sideC)) || (sideB == Math.sqrt(sideA * sideA + sideC * sideC)) || (sideC == Math.sqrt(sideA * sideA + sideB * sideB))) {
                 System.out.println("The triangle is rectangular");
             } else {
                 System.out.println("The triangle is not rectangular");

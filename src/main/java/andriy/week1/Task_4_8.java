@@ -1,3 +1,9 @@
+//4.8. Вводим два числа, сравнить последнии цифры этих чисел (пользоваться оператором %)
+			/*124    4    -   true
+                    1456   567  -   false
+                    1      2    -   false
+                    18     98   -   true*/
+
 package main.java.andriy.week1;
 
 import java.util.Scanner;
@@ -9,11 +15,11 @@ public class Task_4_8 {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the first value");
-        int a = sc.nextInt();
+        int firstValue = sc.nextInt();
         System.out.println("Enter the second value");
-        int b = sc.nextInt();
+        int secondValue = sc.nextInt();
 
-        if ( a % 10 == b % 10 ) {
+        if ( firstValue % 10 == secondValue % 10 ) {
             System.out.println("True");
         }
         else {

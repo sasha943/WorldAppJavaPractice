@@ -16,8 +16,8 @@ public class Task_9 {
         int evenElementsArr2 = 0;
 
         for (int i = 0; i < arrLength; i++) {
-            array1[i] = 20 + (int)(Math.random()*50);
-            array2[i] = 20 + (int)(Math.random()*50);
+            array1[i] = 25 + (int)(Math.random()*50);
+            array2[i] = 25 + (int)(Math.random()*50);
             if (array1[i] % 2 == 0) evenElementsArr1++;
             if (array2[i] % 2 == 0) evenElementsArr2++;
         }
