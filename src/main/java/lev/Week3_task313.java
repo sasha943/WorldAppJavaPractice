@@ -12,7 +12,7 @@ public class Week3_task313 {
         System.out.print("Input size of battlefield (from 2 to 20): ");
         int fieldSize = input.nextInt() - 1;
 
-        char[][] field = new char[fieldSize +1][fieldSize + 1];
+        char[][] field = new char[fieldSize + 1][fieldSize + 1];
 
         for (int i = 0; i < field.length; i++){
             for (int j = 0; j < field[i].length; j++){
