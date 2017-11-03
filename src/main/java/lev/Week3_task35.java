@@ -2,8 +2,8 @@
         b) Поменять столбики с наибольшим и наименьшим количеством символов в двухмерном массиве.
 */
 
-import static main.java.lev.Matrixx.generateStringMarix;
-import static main.java.lev.Matrixx.printMatrix;
+import static main.java.lev.MatrixActions.generateStringMarix;
+import static main.java.lev.MatrixActions.printMatrix;
 
 public class Week3_task35 {
     public static void main(String[] args) {

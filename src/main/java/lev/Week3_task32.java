@@ -1,6 +1,6 @@
 // 3.2. Создать логическую матрицу по следующим критериям, если і равно j, то элементом будет true.
 
-import static main.java.lev.Matrixx.printMatrix;
+import static main.java.lev.MatrixActions.printMatrix;
 
 public class Week3_task32 {
     public static void main(String[] args) {

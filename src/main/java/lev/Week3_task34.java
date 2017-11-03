@@ -6,8 +6,8 @@
 
 import java.util.Arrays;
 
-import static main.java.lev.Matrixx.generateMarix;
-import static main.java.lev.Matrixx.printMatrix;
+import static main.java.lev.MatrixActions.generateMarix;
+import static main.java.lev.MatrixActions.printMatrix;
 
 public class Week3_task34 {
     public static void main(String[] args) {

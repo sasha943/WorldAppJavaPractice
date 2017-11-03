@@ -1,7 +1,7 @@
 // Повернуть матрицу(Двухмерный массив). Матрица квадратная. Пользователь вводит угол кратный 90.
 
-import static main.java.lev.Matrixx.generateMarix;
-import static main.java.lev.Matrixx.printMatrix;
+import static main.java.lev.MatrixActions.generateMarix;
+import static main.java.lev.MatrixActions.printMatrix;
 
 public class Week3_task311 {
     public static void main(String[] args) {

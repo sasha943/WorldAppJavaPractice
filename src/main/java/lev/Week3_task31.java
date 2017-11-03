@@ -1,7 +1,7 @@
 // 3.1. Заменить все числа, которые делятся на 5 без остачи в двухмерной матрице на 8
 
-import static main.java.lev.Matrixx.generateMarix;
-import static main.java.lev.Matrixx.printMatrix;
+import static main.java.lev.MatrixActions.generateMarix;
+import static main.java.lev.MatrixActions.printMatrix;
 
 public class Week3_task31 {
     public static void main(String[] args) {

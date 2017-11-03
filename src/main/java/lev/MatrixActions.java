@@ -1,6 +1,6 @@
 package main.java.lev;
 
-public class Matrixx {
+public class MatrixActions {
 
     public static int[][] generateMarix(int rows, int columns, int minValue, int maxValue){
         int[][] matrix = new int[rows][columns];

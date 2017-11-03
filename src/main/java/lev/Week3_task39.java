@@ -1,7 +1,7 @@
 // Умножить две матрицы
 
-import static main.java.lev.Matrixx.generateMarix;
-import static main.java.lev.Matrixx.printMatrix;
+import static main.java.lev.MatrixActions.generateMarix;
+import static main.java.lev.MatrixActions.printMatrix;
 
 public class Week3_task39 {
     public static void main(String[] args) {
