@@ -26,7 +26,7 @@ public class MatrixActions {
                         k--;
                         continue;
                     }
-                    str = str + randomChar;
+                    str += randomChar;
                 }
                 matrix[i][j] = str;
             }
@@ -73,7 +73,7 @@ public class MatrixActions {
     public static String stringOfSpaces(int length){            // returns string of required number of spaces
         String str = "";
         for (int i = 0; i < length; i++){
-            str = str + " ";
+            str += " ";
         }
         return str;
     }

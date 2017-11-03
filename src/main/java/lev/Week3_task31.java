@@ -11,14 +11,17 @@ public class Week3_task31 {
         System.out.println("Given array:");
         printMatrix(matrix);
 
-        System.out.println("\nAll multiple 5 values replaced by 8");
-        printMatrix(replaceM5by8(matrix));
+        int multipler2find = 5;
+        int number4replace = 8;
+
+        System.out.println("\nAll multiple " + multipler2find + " values replaced by " + number4replace);
+        printMatrix(replaceValues(matrix, multipler2find, number4replace));
     }
 
-    public static int[][] replaceM5by8(int[][] matrix){
+    public static int[][] replaceValues(int[][] matrix, int multipler2find, int number4replace){
         for (int i = 0; i < matrix.length; i++){
             for (int j = 0; j < matrix[i].length; j++){
-                if (matrix[i][j] % 5 == 0) matrix[i][j] = 8;
+                if (matrix[i][j] % multipler2find == 0) matrix[i][j] = number4replace;
             }
         }
         return matrix;
