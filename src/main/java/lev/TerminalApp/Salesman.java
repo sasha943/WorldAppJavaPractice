@@ -2,8 +2,13 @@ package main.java.lev.TerminalApp;
 
 public class Salesman {
 
-    public String fullname;
-    public String login;
-    public String pass;
+    String fullName;
+    String login;
+    String pass;
 
+    Salesman(String fullName, String login, String pass){
+        this.fullName = fullName;
+        this.login = login;
+        this.pass = pass;
+    }
 }
