@@ -6,11 +6,11 @@ public class MainApp {
         Salesman sl2 = new Salesman("Wong Lee", "lee", "abcd");
         Salesman sl3 = new Salesman("Alex Wood", "wood", "1");
 
-        Product prd1 = new Product("Table", 1500);
-        Product prd2 = new Product("Window", 2300);
-        Product prd3 = new Product("door", 2000);
-        Product prd4 = new Product("bed", 1900);
-        Product prd5 = new Product("comod", 3100);
+        Product prd1 = new Product("Table", 500);
+        Product prd2 = new Product("Window", 300);
+        Product prd3 = new Product("door", 100);
+        Product prd4 = new Product("bed", 900);
+        Product prd5 = new Product("comod", 300);
         prd5.printInfo();
 
         Bill b1 = new Bill(sl1);
