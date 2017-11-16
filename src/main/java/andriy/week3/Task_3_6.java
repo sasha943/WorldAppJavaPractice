@@ -12,7 +12,7 @@ public class Task_3_6 {
         System.out.println("Enter the string length");
         int strLength = sc.nextInt();
 
-        for (int i = 0; i < strLength ; i++) {
+        for (int i = 0; i < strLength; i++) {
             stringValues = stringValues + Math.round(Math.random()) + "";
         }
         System.out.println(stringValues);
@@ -22,20 +22,19 @@ public class Task_3_6 {
 
         int sizeZero = 0;
         int sizeOne = 0;
-        int tempSize = 0;
 
         for (int i = 0; i < strLength; i++) {
 
             if (stringValues.charAt(i) == '0') {
                 sizeZero++;
-                if (sizeOne > maxSizeOne){
+                if (sizeOne > maxSizeOne) {
                     maxSizeOne = sizeOne;
                 }
                 sizeOne = 0;
             }
             if (stringValues.charAt(i) == '1') {
                 sizeOne++;
-                if (sizeZero > maxSizeZero){
+                if (sizeZero > maxSizeZero) {
                     maxSizeZero = sizeZero;
                 }
                 sizeZero = 0;
@@ -46,12 +45,12 @@ public class Task_3_6 {
         System.out.println("One indexes max = " + maxSizeOne);
 
         String arrZero = "";
-        for (int i = 0; i < maxSizeZero ; i++) {
+        for (int i = 0; i < maxSizeZero; i++) {
             arrZero = arrZero + '0';
         }
 
         String arrOne = "";
-        for (int i = 0; i < maxSizeOne ; i++) {
+        for (int i = 0; i < maxSizeOne; i++) {
             arrOne = arrOne + '0';
         }
 
