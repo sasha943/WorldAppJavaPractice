@@ -7,13 +7,13 @@ import java.util.Date;
 
 public class Bill {
 
-    int id;
-    static int next_id = 1;
-    ArrayList<Product> products = new ArrayList<Product>();
-    Salesman salesman;
-    String closeTime;
-    int amountPrice;
-    boolean closed = false;
+    private int id;
+    private static int next_id = 1;
+    private ArrayList<Product> products = new ArrayList<Product>();
+    private Salesman salesman;
+    private String closeTime;
+    private int amountPrice;
+    private boolean closed = false;
 
     Bill(Salesman salesman){
         this.id = next_id++;
@@ -26,29 +26,44 @@ public class Bill {
         this.closeTime = sdf.format( dateClose.getTime() );
     }
 
-    public void addProduct(Product prod){
+    void addProduct(Product prod){
         this.products.add(prod);
     }
 
-    public void closeBill(){
+    void closeBill(){
         this.closed = true;
     }
 
-    public void calculatePrice(){
+    void calculatePrice(){
         for (int i = 0; i < this.products.size(); i++){
             amountPrice += this.products.get(i).getPrice();
         }
     }
 
-    public void printBill(){
+    void printBill(){
         System.out.printf("============Bill id: %d============\n", id);
         System.out.println("Close time: " + closeTime);
-        System.out.println("Salesman: " + salesman.fullName);
+        System.out.println("Salesman: " + salesman.getFullName());
         for (Product pr : products){
-            System.out.printf("Product: %-16s    Price: %6d\n", pr.name, pr.price);
+            System.out.printf("Product: %-16s    Price: %6d\n", pr.getName(), pr.getPrice());
         }
         this.calculatePrice();
         System.out.printf("TOTAL: %35d\n", amountPrice);
     }
 
+    int getId() {
+        return id;
+    }
+
+    String getCloseTime() {
+        return closeTime;
+    }
+
+    int getAmountPrice() {
+        return amountPrice;
+    }
+
+    boolean isClosed() {
+        return closed;
+    }
 }

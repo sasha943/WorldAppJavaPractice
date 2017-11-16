@@ -1,5 +1,7 @@
 package main.java.lev.TerminalApp;
 
+import main.java.lev.TerminalApp.*;
+
 public class MainApp {
     public static void main( String[] args ) {
         Salesman sl1 = new Salesman("Joe Black", "black", "1234");
@@ -31,6 +33,8 @@ public class MainApp {
         b3.addProduct( prd4 );
         b3.addProduct( prd5 );
         b3.printBill();
+
+
     }
 
 
