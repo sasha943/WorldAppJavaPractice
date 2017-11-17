@@ -4,21 +4,23 @@ import java.util.ArrayList;
 
 public class Terminal {
 
-    private ArrayList<Bill> bills = new ArrayList<Bill>();
-    private ArrayList<Salesman> salesmans = new ArrayList<Salesman>();
+    private static ArrayList<Bill> bills = new ArrayList<Bill>();
+    private static ArrayList<Salesman> salesmans = new ArrayList<Salesman>();
 
-    public String registration(String salesman, String login, String pass){
-        for ( Salesman sl: salesmans) {
+    public boolean registration(String salesman, String login, String pass){    //returns true if success
+        for ( Salesman sl: salesmans) {                                         //and false if error
             if (login.equals(sl.getLogin())){
-                return "Login already exist. Try another";
+                System.out.println("Login already exist. Try another");
+                return false;
             }
         }
         salesmans.add( new Salesman( salesman, login, pass ) );
-        return "Salesman " + salesman + " registered";
+        System.out.println("Salesman " + salesman + " registered");
+        return true;
     }
 
-    public String login(String login, String pass){
-        for ( Salesman sl : salesmans) {
+    public String login(String login, String pass){                             //returns token if success
+        for ( Salesman sl : salesmans) {                                        //and empty string if error
             if (login.equals(sl.getLogin())){
                 if (pass.equals(sl.getPass())){
                     System.out.println("Hello, " + sl.getFullName());
@@ -31,7 +33,7 @@ public class Terminal {
         return "";
     }
 
-    public void logout(String token){
+    public void logout(String token){                                           //void
         for ( Salesman sl : salesmans) {
             if ( token.equals( sl.getSessionToken() ) ){
                 sl.setSessionToken( "" );
@@ -42,32 +44,40 @@ public class Terminal {
         System.out.println("No such token");
     }
 
-    public int createBill(String token){
-        for ( Salesman sl : salesmans){
+    public int createBill(String token){                                        //returns bill_id if success
+        for ( Salesman sl : salesmans){                                         // and -1 if error
             if ( token.equals( sl.getSessionToken() ) ){
                 bills.add( new Bill( sl ) );
-                return bills.size() - 1;
+                System.out.println("Created Bill #" + (bills.size()));
+                return bills.size();
             }
         }
+        System.out.println("Not authorized");
         return -1;
     }
 
-    public String addProduct(String token, int billId, String name, int price){
-        for ( Salesman sl : salesmans) {
+    public boolean addProduct(String token, int billId, String name, int price){    //returns true if success
+        for ( Salesman sl : salesmans) {                                            //and false if error
             if ( token.equals( sl.getSessionToken() ) ) {
-                bills.get( billId ).addProduct( name, price );
-                return "Product added";
+                if (bills.get(billId - 1).isClosed()){
+                    System.out.println("Bill is closed");
+                    return false;
+                }
+                bills.get( billId - 1 ).addProduct( name, price );
+                System.out.println("Product added");
+                return true;
             }
         }
-        return "Not authorized";
+        System.out.println("Not authorized");
+        return false;
     }
 
 
     public void printBill( String token, int bill_id ) {
         for ( Salesman sl : salesmans) {
             if ( token.equals(sl.getSessionToken()) ) {
-                if ( bill_id >= 0 & bill_id < bills.size() ) {
-                    bills.get( bill_id ).printBill();
+                if ( bill_id > 0 & bill_id <= bills.size() ) {
+                    bills.get( bill_id - 1 ).printBill();
                 } else {
                     System.out.println( "there is no Bill with such id" );
                 }
@@ -78,6 +88,17 @@ public class Terminal {
     }
 
 
+    public boolean closeBill(String token, int bill_id){
+        for ( Salesman sl : salesmans) {
+            if (token.equals(sl.getSessionToken())) {
+                bills.get(bill_id - 1).close();
+                System.out.println("Bill # " + bill_id + " is closed");
+                return true;
+            }
+        }
+        System.out.println("Not authorized");
+        return false;
+    }
 
 
 
