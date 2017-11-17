@@ -5,7 +5,7 @@ public class Salesman {
     private String fullName;
     private String login;
     private String pass;
-    private String token;
+    private String sessionToken;
 
     Salesman(String fullName, String login, String pass){
         this.fullName = fullName;
@@ -25,11 +25,11 @@ public class Salesman {
         return pass;
     }
 
-    String getToken() {
-        return token;
+    String getSessionToken() {
+        return sessionToken;
     }
 
-    void setToken( String token ) {
-        this.token = token;
+    void setSessionToken( String sessionToken ) {
+        this.sessionToken = sessionToken;
     }
 }

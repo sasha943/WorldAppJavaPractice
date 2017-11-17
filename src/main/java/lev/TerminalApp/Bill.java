@@ -26,8 +26,8 @@ public class Bill {
         this.closeTime = sdf.format( dateClose.getTime() );
     }
 
-    void addProduct(Product prod){
-        this.products.add(prod);
+    void addProduct(String name, int price){
+        this.products.add(new Product( name, price ));
     }
 
     void closeBill(){
