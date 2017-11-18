@@ -52,11 +52,22 @@ public class Client {
 
         session1.printBill(token1, bill_id1);
 
-        session2.addProduct(token2, bill_id2, "ice-cream", 2);
+        session2.addProduct(token2, bill_id2, "ice-cream", 3);
 
         session2.closeBill(token2, bill_id2);
 
         session2.printBill(token2, bill_id2);
 
+        session2.addProduct(token2, bill_id2, "cake", 8);
+
+        bill_id1 = session1.getMaxBill(token1);
+        System.out.println("Max bill: # " + bill_id1);
+        session1.printBill(token1, bill_id1);
+
+        bill_id1 = session1.getMinBill(token1);
+        System.out.println("Min bill: # " + bill_id1);
+        session1.printBill(token1, bill_id1);
+
+        session1.getAvg(token1);
     }
 }

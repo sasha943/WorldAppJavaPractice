@@ -50,7 +50,9 @@ public class Bill {
         for (Product pr : products){
             System.out.printf("Product: %-16s    Price: %6d\n", pr.getName(), pr.getPrice());
         }
+        System.out.println("------------------------------------------");
         System.out.printf("TOTAL: %35d\n", amountPrice);
+        System.out.println("==========================================");
     }
 
     int getId() {
