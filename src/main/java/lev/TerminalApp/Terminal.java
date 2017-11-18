@@ -146,8 +146,8 @@ public class Terminal {
     }
 
 
-    public boolean getAvg(String token){
-        for ( Salesman sl : salesmans) {                                        //and -1 if error
+    public boolean getAvg(String token){                                        //returns true is success
+        for ( Salesman sl : salesmans) {                                        //and false if error
             if (token.equals(sl.getSessionToken())) {
                 if (bills.size() == 0) {
                     System.out.println("No bills");
@@ -157,14 +157,61 @@ public class Terminal {
                 for (Bill bl : bills){
                     sum += bl.getAmountPrice();
                 }
-                System.out.printf("Average AmountPrice = %.2f", sum/bills.size());
+                System.out.printf("Average AmountPrice = %.2f\n", sum/bills.size());
                 return true;
             }
         }
         System.out.println("Not authorized");
         return false;
-
     }
+
+
+    public boolean countSoldProducts(String token){                             //returns true is success
+        for ( Salesman sl : salesmans) {                                        //and false if error
+            if (token.equals(sl.getSessionToken())) {
+                if (bills.size() == 0) {
+                    System.out.println("No bills");
+                    return false;
+                }
+                int sum = 0;
+                for (Bill bl : bills){
+                    if (bl.isClosed()) sum += bl.getAmountPrice();
+                }
+                System.out.printf("Total sold products price = %d\n", sum);
+                return true;
+            }
+        }
+        System.out.println("Not authorized");
+        return false;
+    }
+
+
+    public boolean getTopSalesman(String token){                                //returns true if success
+        for ( Salesman sl : salesmans) {                                        //and false if error
+            if (token.equals(sl.getSessionToken())) {
+                int topSalesmanSales = 0;
+                Salesman topSalesman = salesmans.get(0);
+                for (Salesman currentSalesman : salesmans) {
+                    int salesmanSales = 0;
+                    for (Bill bl : bills) {
+                        if (bl.isClosed() && currentSalesman == bl.getSalesman()) {
+                            salesmanSales += bl.getAmountPrice();
+                        }
+                    }
+                    if (salesmanSales > topSalesmanSales) {
+                        topSalesmanSales = salesmanSales;
+                        topSalesman = currentSalesman;
+                    }
+                }
+                System.out.println("Top salesman: " + topSalesman.getFullName() + ". Total sales - " + topSalesmanSales);
+                return true;
+            }
+        }
+        System.out.println("Not authorized");
+        return false;
+    }
+
+
 
 
     private String generateToken() {

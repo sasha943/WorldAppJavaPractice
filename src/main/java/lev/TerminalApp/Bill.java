@@ -55,6 +55,10 @@ public class Bill {
         System.out.println("==========================================");
     }
 
+    public Salesman getSalesman() {
+        return salesman;
+    }
+
     int getId() {
         return id;
     }

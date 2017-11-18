@@ -29,6 +29,13 @@ public class Client {
 
         session1.printBill(token1, bill_id1);
 
+        session1.registration("Mr.Smith", "smith", "1111");
+        token1 = session1.login("smith", "1111");
+        bill_id1 = session1.createBill(token1);
+        session1.addProduct(token1, bill_id1, "pizza", 7);
+        session1.addProduct(token1, bill_id1, "beer", 9);
+        session1.closeBill(token1, bill_id1);
+
         session1.registration("Harry Potter", "potter", "777");
 
         token1 = session1.login("potter", "777");
@@ -69,5 +76,17 @@ public class Client {
         session1.printBill(token1, bill_id1);
 
         session1.getAvg(token1);
+
+        session1.countSoldProducts(token1);
+        session1.closeBill(token1, 1);
+        session1.countSoldProducts(token1);
+
+        System.out.println("IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
+        session1.printBill(token1, 1);
+        session1.printBill(token1, 2);
+        session1.printBill(token1, 3);
+        session1.printBill(token1, 4);
+
+        session1.getTopSalesman(token1);
     }
 }
