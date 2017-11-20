@@ -1,4 +1,5 @@
 package main.java.andriy.week2;
+
 import java.util.Scanner;
 import java.util.Random;
 import java.util.Arrays;

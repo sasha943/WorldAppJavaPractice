@@ -14,7 +14,7 @@ public class Task_2 {
 
         for (int i = 0; i < arrLength; i++) {
 
-            array[i] = (int)(Math.random()*100);
+            array[i] = (int) (Math.random() * 100);
         }
         System.out.println("Generated array " + Arrays.toString(array));
 
