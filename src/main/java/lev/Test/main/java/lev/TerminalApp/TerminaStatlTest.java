@@ -1,6 +1,8 @@
 package main.java.lev.TerminalApp;
 
+import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -10,14 +12,15 @@ import static org.junit.Assert.*;
 
 public class TerminaStatlTest {
 
-    private String token;
-    private Terminal session1 = new Terminal();
+    String token;
+    Terminal session1 = new Terminal();
 
-    @Before
-    public void init(){
+    @BeforeClass
+    public static void init(){
+        Terminal session1 = new Terminal();
         session1.registration( "Bogdan Nalivaiko", "Zorro", "Z");
         session1.registration( "bot348", "bot", "348");
-        token = session1.login( "Zorro", "Z" );
+        String token = session1.login( "Zorro", "Z" );
         int bill_id1 = session1.createBill( token );
         session1.addProduct( token, bill_id1, "banana", 10 );
         session1.addProduct( token, bill_id1, "apple", 8 );
@@ -33,10 +36,17 @@ public class TerminaStatlTest {
         session1.addProduct( token, bill_id1, "Neurointerface", 1000 );
         session1.closeBill( token, bill_id1 );
 
-        for ( int i = 1; i < 9; i++ ) {
-            session1.printBill( token, i );
-        }
+        session1.logout( token );
+    }
 
+    @Before
+    public void login(){
+        token = session1.login( "Zorro", "Z" );
+    }
+
+    @After
+    public void logout(){
+        session1.logout( token );
     }
 
     @Test
@@ -62,16 +72,21 @@ public class TerminaStatlTest {
     @Test
     public void countSoldProducts() throws Exception {
         assertTrue( session1.countSoldProducts( token ) );
-/*        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream( outContent));
         session1.countSoldProducts( token );
-        int res = outContent.toString().indexOf( "Total sold products price = 60" );
-        assertTrue(res == 0 );*/
+        int res = outContent.toString().indexOf( "Total sold products price = 1060" );
+        assertTrue(res == 0 );
     }
 
     @Test
     public void getTopSalesman() throws Exception {
         assertTrue( session1.getTopSalesman( token ) );
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream( outContent));
+        session1.getTopSalesman( token );
+        int res = outContent.toString().indexOf( "Top salesman: bot348. Total sales - 1000" );
+        assertTrue(res == 0 );
     }
 
 }
