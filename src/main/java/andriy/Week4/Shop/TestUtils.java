@@ -1,25 +1,23 @@
 package main.java.andriy.Week4.Shop;
-
-import main.java.andriy.Week4.Shop.ProductUtils;
 import main.java.andriy.Week4.Shop.SalesmanUtils;
 
 public class TestUtils {
     public static void main(String[] args) {
 
-
-        for (int i = 0; i < 5; i++) {
-            Product product = ProductUtils.generateProducts();
+        Product[] productGroup = new Product[10];                       //Products initialization
+        for (int i = 0; i < productGroup.length; i++) {
+            productGroup[i] = ProductUtils.generateProduct();
+        }
+        for (int i = 0; i < productGroup.length; i++) {                // Products list
+            Product product = productGroup[i];
             System.out.println(product.getProduct());
-
         }
 
-        for (int i = 0; i < 4; i++) {
-            Salesman salesman = SalesmanUtils.generateSalesman();
-            System.out.println(salesman.getFullname());
+        Salesman[] salesmans = SalesmanUtils.generateSalesman();
 
-        }
+        System.out.println(salesmans[0].getFullname());
 
 
-        //System.out.println(Salesman1.getSalesman());
+
     }
 }
