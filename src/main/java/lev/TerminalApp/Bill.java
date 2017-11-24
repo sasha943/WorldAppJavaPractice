@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Bill {
+class Bill {
 
     private int id;
     private static int next_id = 1;

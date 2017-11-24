@@ -42,6 +42,9 @@ public class Client {
 
         Terminal session2 = new Terminal();
 
+        session2.registration( "Smith", "alex", "pass");
+        session2.registration( "Smith", "kate", "dgbeh3&873");
+
         token2 = session2.login( "black", "1234" );
 
         int bill_id2 = session2.createBill(token2);
@@ -88,5 +91,10 @@ public class Client {
         session1.printBill(token1, 4);
 
         session1.getTopSalesman(token1);
+
+        session1.getAvg( token1 );
+
+        session1.findSalesmanByLoginOrFullname( token1, "smith" );
+
     }
 }

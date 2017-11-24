@@ -1,6 +1,6 @@
 package main.java.lev.TerminalApp;
 
-public class Salesman {
+class Salesman {
 
     private String fullName;
     private String login;
@@ -11,6 +11,7 @@ public class Salesman {
         this.fullName = fullName;
         this.login = login;
         this.pass = pass;
+        sessionToken = "";
     }
 
     String getFullName() {

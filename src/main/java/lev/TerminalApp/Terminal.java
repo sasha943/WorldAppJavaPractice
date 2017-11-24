@@ -1,6 +1,7 @@
 package main.java.lev.TerminalApp;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Terminal {
 
@@ -31,6 +32,25 @@ public class Terminal {
         }
         System.out.println("Login or password invalid");
         return "";
+    }
+
+    public boolean findSalesmanByLoginOrFullname( String token, String searchString){
+        List<Salesman> slList = new ArrayList<>();
+        for ( Salesman sl : salesmans){
+            if ( token.equals( sl.getSessionToken() ) ){
+                for ( Salesman s : salesmans ){
+                    if (s.getFullName().toLowerCase().lastIndexOf( searchString ) != -1 || s.getLogin().equals( searchString )){
+                        slList.add( s );
+                    }
+                }
+                for ( Salesman s : slList ) {
+                    System.out.printf("Name: %10s,    login: %6s,    on-line: %5b\n", s.getFullName(), s.getLogin(), !s.getSessionToken().equals( "" ));
+                }
+                return true;
+            }
+        }
+        System.out.println("Not authorized");
+        return false;
     }
 
     public void logout(String token){                                           //void
@@ -72,7 +92,6 @@ public class Terminal {
         return false;
     }
 
-
     public void printBill( String token, int bill_id ) {
         for ( Salesman sl : salesmans) {
             if ( token.equals(sl.getSessionToken()) ) {
@@ -86,7 +105,6 @@ public class Terminal {
         }
         System.out.println("Not authorized");
     }
-
 
     public boolean closeBill(String token, int bill_id){                        //returns true if success
         for ( Salesman sl : salesmans) {                                        //and false if error

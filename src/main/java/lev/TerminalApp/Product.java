@@ -1,6 +1,6 @@
 package main.java.lev.TerminalApp;
 
-public class Product {
+class Product {
     private int id;
     private static int next_id = 1000;
     private String name = "tovar";
