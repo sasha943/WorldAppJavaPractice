@@ -31,9 +31,21 @@ public class TerminalAuthorizationTest {
     }
 
     @Test
+    public void loginBad1() throws Exception {
+        token = session1.login( "wrong pass", pass );
+        assertEquals( "", token );
+        assertFalse( session1.getTopSalesman( token ) );
+    }
+
+    @Test
     public void findSalesmanByLoginOrFullname() throws Exception {
         token = session1.login( login, pass );
         assertTrue( session1.findSalesmanByLoginOrFullname( token, "petrenko" ) );
+    }
+
+    @Test
+    public void badToken() throws Exception {
+        assertFalse( session1.getTopSalesman( "gHDiewwh387dhr8f" ) );
     }
 
     @Test
